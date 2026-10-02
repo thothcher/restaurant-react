@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 
 const SITE = 'Trattoria';
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, ''); // '' in dev, '/restaurant-react' on GitHub Pages
 const DEFAULT_DESC = 'Browse the Trattoria menu: pizzas, pastas, mains and desserts. Order online in a few taps.';
 
 function meta(selector, tag, attrs) {
@@ -15,9 +16,9 @@ function meta(selector, tag, attrs) {
 }
 const setMeta = (attr, key, content) => meta(`meta[${attr}="${key}"]`, 'meta', { [attr]: key }).setAttribute('content', content);
 
-export function applySeo({ title, description = DEFAULT_DESC, path = location.pathname, noindex = false, image, type = 'website', jsonLd } = {}) {
+export function applySeo({ title, description = DEFAULT_DESC, path = location.pathname.slice(BASE.length) || '/', noindex = false, image, type = 'website', jsonLd } = {}) {
   const fullTitle = title ? `${title} | ${SITE}` : `${SITE} — Fresh Italian Dishes, Ordered Online`;
-  const url = location.origin + path;
+  const url = location.origin + BASE + path;
   document.title = fullTitle;
   setMeta('name', 'description', description);
   setMeta('name', 'robots', noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large');

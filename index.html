@@ -2,6 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <script>
+    // Restore the real URL after the GitHub Pages 404.html redirect (see public/404.html).
+    (function (l) {
+      if (l.search[1] === "/") {
+        var d = l.search.slice(1).split("&").map(function (s) { return s.replace(/~and~/g, "&"); }).join("?");
+        window.history.replaceState(null, null, l.pathname.slice(0, -1) + d + l.hash);
+      }
+    })(window.location);
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Trattoria — Fresh Italian Dishes, Ordered Online</title>
   <meta name="description" content="Browse the Trattoria menu: pizzas, pastas, mains and desserts. Filter by vegetarian, spiciness and price, then order online in a few taps.">
