@@ -81,7 +81,7 @@ export default function Layout() {
       <Header />
       <main id="app" tabIndex={-1} ref={mainRef}><Outlet /></main>
       <footer className="site-footer">
-        <span>© {new Date().getFullYear()} Trattoria</span>
+        <span>© {new Date().getFullYear()} <a href="https://github.com/thothcher" target="_blank" rel="noopener noreferrer">thothcher</a></span>
         <span>Powered by RestaurantAPI</span>
       </footer>
       <Toasts />
