@@ -58,8 +58,14 @@ The API base URL and key live in [`src/config.js`](src/config.js).
 
 ## Deployment (GitHub Pages)
 
-Pushing to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds the
-app and publishes `dist/` to GitHub Pages.
+The site is served from the `gh-pages` branch (Settings → Pages → *Deploy from a branch*). To publish a new version:
+
+```bash
+npm run deploy    # builds, then pushes dist/ to the gh-pages branch
+```
+
+(This uses the [`gh-pages`](https://www.npmjs.com/package/gh-pages) package instead of a GitHub Actions workflow,
+so it needs no CI minutes.)
 
 GitHub Pages has no single-page-app fallback, so:
 
