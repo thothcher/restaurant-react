@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /cart
+Disallow: /profile
+Disallow: /login
+Disallow: /register
+Disallow: /verify
+Disallow: /forgot
+Disallow: /reset
+
+
+Sitemap: https://thothcher.github.io/restaurant-react/sitemap.xml
